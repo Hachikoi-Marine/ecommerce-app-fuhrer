@@ -1,3 +1,5 @@
+import { exampleImages } from './example-images';
+
 export type CatalogProduct = {
 	slug: string;
 	title: string;
@@ -10,16 +12,11 @@ export type CatalogProduct = {
 	imageAlt: string;
 };
 
-const p1 =
-	'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=80';
-const p2 =
-	'https://images.unsplash.com/photo-1545241047-6083a8f593db?auto=format&fit=crop&w=900&q=80';
-const p3a =
-	'https://images.unsplash.com/photo-1466698058961-a35f575a815c?auto=format&fit=crop&w=900&q=80';
-const p3b =
-	'https://images.unsplash.com/photo-1509423350716-97b936e769bf?auto=format&fit=crop&w=600&q=80';
-const p3c =
-	'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80';
+const p1 = exampleImages.product1;
+const p2 = exampleImages.product2;
+const p3a = exampleImages.product3a;
+const p3b = exampleImages.product3b;
+const p3c = exampleImages.product3c;
 
 export const catalogProducts: CatalogProduct[] = [
 	{
@@ -30,7 +27,7 @@ export const catalogProducts: CatalogProduct[] = [
 		soldOut: false,
 		stock: 12,
 		imageMain: p1,
-		thumbnails: [p1, p2, p3a],
+		thumbnails: [p1, p2, exampleImages.extraA],
 		imageAlt: 'Large leafy plant in a textured pot',
 	},
 	{
@@ -41,7 +38,7 @@ export const catalogProducts: CatalogProduct[] = [
 		soldOut: false,
 		stock: 3,
 		imageMain: p2,
-		thumbnails: [p2, p1, p3b],
+		thumbnails: [p2, p1, exampleImages.extraB],
 		imageAlt: 'Two small plants in terracotta pots',
 	},
 	{
@@ -52,7 +49,7 @@ export const catalogProducts: CatalogProduct[] = [
 		soldOut: true,
 		stock: 0,
 		imageMain: p3a,
-		thumbnails: [p3a, p3b, p3c],
+		thumbnails: [p3a, p3b, exampleImages.extraC],
 		imageAlt: 'Plant in a wooden pot',
 	},
 ];
