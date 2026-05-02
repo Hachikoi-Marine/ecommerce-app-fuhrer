@@ -1,4 +1,3 @@
-// @ts-check
 import vercel from '@astrojs/vercel';
 import { defineConfig } from 'astro/config';
 
