@@ -1,0 +1,574 @@
+---
+const heroImg =
+	'https://images.unsplash.com/photo-1507646229378-0178e3a78ceb?auto=format&fit=crop&w=1800&q=80';
+const catJungle =
+	'https://images.unsplash.com/photo-1518531930787-abc5de85df01?auto=format&fit=crop&w=800&q=80';
+const catOutdoor =
+	'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80';
+const catBedroom =
+	'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=800&q=80';
+const feat1 =
+	'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=80';
+const feat2 =
+	'https://images.unsplash.com/photo-1545241047-6083a8f593db?auto=format&fit=crop&w=900&q=80';
+const blog1 =
+	'https://images.unsplash.com/photo-1463937583078-0e53b2d6d51c?auto=format&fit=crop&w=900&q=80';
+const blog2 =
+	'https://images.unsplash.com/photo-1470058865558-bcc104ee2d8a?auto=format&fit=crop&w=900&q=80';
+---
+
+<main>
+	<section class="hero" aria-labelledby="hero-heading">
+		<div class="hero-copy">
+			<h1 id="hero-heading" class="font-serif hero-title">
+				Find perfect plants for your home
+			</h1>
+			<p class="hero-sub">Beautiful plants that encourage you to get creative.</p>
+			<a class="btn btn-solid" href="#featured">Shop now</a>
+		</div>
+		<div class="hero-media">
+			<img src={heroImg} alt="Sunlit patio with lush plants and outdoor seating" width="1800" height="900" loading="eager" />
+		</div>
+	</section>
+
+	<section id="categories" class="section categories" aria-labelledby="categories-heading">
+		<h2 id="categories-heading" class="section-title font-serif">Categories</h2>
+		<div class="categories-grid">
+			<a href="#featured" class="category-card">
+				<div class="category-media">
+					<img src={catJungle} alt="" width="800" height="1000" loading="lazy" />
+				</div>
+				<p class="category-label font-serif">Jungle Plants</p>
+			</a>
+			<a href="#featured" class="category-card">
+				<div class="category-media">
+					<img src={catOutdoor} alt="" width="800" height="1000" loading="lazy" />
+				</div>
+				<p class="category-label font-serif">Outdoor Plants</p>
+			</a>
+			<a href="#featured" class="category-card">
+				<div class="category-media">
+					<img src={catBedroom} alt="" width="800" height="1000" loading="lazy" />
+				</div>
+				<p class="category-label font-serif">Bedroom Plants</p>
+			</a>
+		</div>
+	</section>
+
+	<section class="section quote-block" aria-label="Inspirational quote">
+		<blockquote class="font-serif quote-text">
+			Love and work are to people what water and sunshine are to plants
+		</blockquote>
+	</section>
+
+	<section id="featured" class="section featured" aria-labelledby="featured-heading">
+		<div class="featured-intro">
+			<h2 id="featured-heading" class="font-serif featured-title">Featured</h2>
+			<p class="featured-desc">
+				Our plants are 100% organic, we don't use pesticides or harmful chemicals. But please don't
+				eat them!
+			</p>
+			<a class="btn btn-outline" href="#categories">Shop all favourites</a>
+		</div>
+		<div class="featured-products">
+			<a href="/products/plant-1" class="product-card">
+				<div class="product-media">
+					<img src={feat1} alt="Large leafy plant in a pot" width="900" height="1100" loading="lazy" />
+				</div>
+				<h3 class="product-name font-serif">Plant 1</h3>
+				<p class="product-price">190€</p>
+			</a>
+			<a href="/products/plant-2" class="product-card">
+				<div class="product-media">
+					<span class="badge">Limited stock</span>
+					<img src={feat2} alt="Two small plants in terracotta pots" width="900" height="1100" loading="lazy" />
+				</div>
+				<h3 class="product-name font-serif">Plant 2</h3>
+				<p class="product-price">50€</p>
+			</a>
+		</div>
+	</section>
+
+	<section class="section blog" aria-labelledby="blog-heading">
+		<h2 id="blog-heading" class="visually-hidden">From the journal</h2>
+		<div class="blog-grid">
+			<article class="blog-card">
+				<div class="blog-media">
+					<img src={blog1} alt="" width="900" height="560" loading="lazy" />
+					<div class="blog-author">Written by Melissa Ball</div>
+				</div>
+				<div class="blog-body">
+					<p class="blog-edition">Edition 202</p>
+					<h3 class="blog-title font-serif">
+						How to water your freaking plants so they don't die after one week
+					</h3>
+				</div>
+			</article>
+			<article class="blog-card">
+				<div class="blog-media">
+					<img src={blog2} alt="" width="900" height="560" loading="lazy" />
+					<div class="blog-author">Written by Jesse Royce</div>
+				</div>
+				<div class="blog-body">
+					<p class="blog-edition">Edition 203</p>
+					<h3 class="blog-title font-serif">
+						How to repot a Monstera without killing it and foster its growth
+					</h3>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section id="newsletter" class="section newsletter" aria-labelledby="newsletter-heading">
+		<h2 id="newsletter-heading" class="font-serif newsletter-title">
+			Get 15% off your next order, subscribe to our newsletter
+		</h2>
+		<div class="newsletter-form" role="group" aria-label="Newsletter signup">
+			<label class="visually-hidden" for="newsletter-email">Email</label>
+			<input
+				id="newsletter-email"
+				class="newsletter-input"
+				type="email"
+				name="email"
+				placeholder="Enter your email here"
+				autocomplete="email"
+			/>
+			<button type="button" class="btn btn-solid">Subscribe</button>
+		</div>
+	</section>
+
+	<footer class="site-footer">
+		<div class="footer-top">
+			<p class="footer-brand font-serif">Rad Plants</p>
+			<label class="currency-label">
+				<span class="visually-hidden">Currency</span>
+				<select class="currency-select" name="currency" aria-label="Currency">
+					<option value="eur" selected>EUR</option>
+					<option value="usd">USD</option>
+					<option value="gbp">GBP</option>
+				</select>
+			</label>
+		</div>
+		<div class="footer-columns">
+			<div>
+				<h3 class="footer-heading">Connect</h3>
+				<ul class="footer-list">
+					<li><a href="#">Instagram</a></li>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">Pinterest</a></li>
+					<li><a href="#">YouTube</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="footer-heading">Resources</h3>
+				<ul class="footer-list">
+					<li><a href="#">Return policy</a></li>
+					<li><a href="#">Track an order</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Privacy policy</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="footer-heading">About</h3>
+				<ul class="footer-list">
+					<li><a href="#">Our story</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Press</a></li>
+				</ul>
+			</div>
+		</div>
+		<p class="footer-credit">Designed by Slobodan Rad</p>
+	</footer>
+</main>
+
+<style>
+	.font-serif {
+		font-family: var(--font-serif);
+	}
+
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem) 0;
+		gap: 2rem;
+	}
+
+	.hero-copy {
+		max-width: 40rem;
+	}
+
+	.hero-title {
+		font-size: clamp(2rem, 5vw, 3.25rem);
+		font-weight: 600;
+		line-height: 1.15;
+		margin: 0 0 1rem;
+	}
+
+	.hero-sub {
+		margin: 0 0 1.75rem;
+		color: var(--color-secondary);
+		font-size: 1.0625rem;
+	}
+
+	.hero-media {
+		width: 100%;
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+
+	.hero-media img {
+		width: 100%;
+		display: block;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.875rem 1.75rem;
+		font-family: var(--font-sans);
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		border: 1px solid transparent;
+		cursor: pointer;
+	}
+
+	.btn-solid {
+		background: var(--color-primary);
+		color: var(--color-background);
+		border-color: var(--color-primary);
+	}
+
+	.btn-outline {
+		background: transparent;
+		color: var(--color-primary);
+		border-color: var(--color-primary);
+	}
+
+	.section {
+		padding: clamp(3rem, 8vw, 5.5rem) clamp(1rem, 4vw, 3rem);
+	}
+
+	.section-title {
+		text-align: center;
+		font-size: clamp(1.75rem, 3vw, 2.25rem);
+		font-weight: 600;
+		margin: 0 0 2.5rem;
+	}
+
+	.categories-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: clamp(1rem, 3vw, 2rem);
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 768px) {
+		.categories-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.category-card {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.category-media {
+		overflow: hidden;
+		aspect-ratio: 3 / 4;
+	}
+
+	.category-media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.35s ease;
+	}
+
+	.category-card:hover .category-media img {
+		transform: scale(1.03);
+	}
+
+	.category-label {
+		text-align: center;
+		margin: 1rem 0 0;
+		font-size: 1.125rem;
+	}
+
+	.quote-block {
+		text-align: center;
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.quote-text {
+		margin: 0;
+		font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+		font-style: italic;
+		line-height: 1.45;
+	}
+
+	.featured {
+		display: grid;
+		grid-template-columns: 1fr 1.1fr;
+		gap: clamp(2rem, 5vw, 4rem);
+		align-items: start;
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 900px) {
+		.featured {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.featured-title {
+		font-size: clamp(1.75rem, 3vw, 2.25rem);
+		margin: 0 0 1rem;
+	}
+
+	.featured-desc {
+		margin: 0 0 1.5rem;
+		color: var(--color-secondary);
+		max-width: 22rem;
+	}
+
+	.featured-products {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: clamp(1rem, 3vw, 2rem);
+	}
+
+	.product-card {
+		margin: 0;
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+
+	.product-media {
+		position: relative;
+		overflow: hidden;
+		aspect-ratio: 4 / 5;
+		margin-bottom: 0.75rem;
+	}
+
+	.product-media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.badge {
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		z-index: 1;
+		padding: 0.35rem 0.5rem;
+		font-size: 0.6875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		background: var(--color-primary);
+		color: var(--color-background);
+	}
+
+	.product-name {
+		font-size: 1.125rem;
+		margin: 0 0 0.25rem;
+		font-weight: 600;
+	}
+
+	.product-price {
+		margin: 0;
+		font-size: 0.9375rem;
+	}
+
+	.blog-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: clamp(1rem, 3vw, 2rem);
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 768px) {
+		.blog-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.blog-media {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.blog-media img {
+		width: 100%;
+		display: block;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+	}
+
+	.blog-author {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		padding: 0.5rem 0.75rem;
+		font-size: 0.8125rem;
+		background: var(--color-background);
+		color: var(--color-primary);
+	}
+
+	.blog-body {
+		padding-top: 1rem;
+	}
+
+	.blog-edition {
+		margin: 0 0 0.35rem;
+		font-size: 0.8125rem;
+		color: var(--color-secondary);
+	}
+
+	.blog-title {
+		margin: 0;
+		font-size: clamp(1.125rem, 2vw, 1.35rem);
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	.newsletter {
+		text-align: center;
+		max-width: 40rem;
+		margin: 0 auto;
+	}
+
+	.newsletter-title {
+		font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+		font-weight: 600;
+		line-height: 1.35;
+		margin: 0 0 1.75rem;
+	}
+
+	.newsletter-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: center;
+		align-items: stretch;
+	}
+
+	.newsletter-input {
+		flex: 1 1 14rem;
+		min-width: 0;
+		padding: 0.875rem 1rem;
+		font: inherit;
+		border: 1px solid var(--color-muted);
+		background: var(--color-muted);
+		color: var(--color-primary);
+	}
+
+	.newsletter-input::placeholder {
+		color: var(--color-secondary);
+	}
+
+	.site-footer {
+		padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 3rem) 2rem;
+		border-top: 1px solid var(--color-muted);
+		max-width: 72rem;
+		margin: 0 auto;
+	}
+
+	.footer-top {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.footer-brand {
+		margin: 0;
+		font-size: 1.35rem;
+		font-weight: 700;
+	}
+
+	.currency-select {
+		font: inherit;
+		padding: 0.4rem 2rem 0.4rem 0.5rem;
+		border: 1px solid var(--color-muted);
+		background: var(--color-background);
+		color: var(--color-primary);
+	}
+
+	.footer-columns {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		margin-bottom: 2.5rem;
+	}
+
+	@media (max-width: 600px) {
+		.footer-columns {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.footer-heading {
+		margin: 0 0 0.75rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.footer-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.footer-list li {
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-list a {
+		text-decoration: none;
+		color: var(--color-secondary);
+		font-size: 0.9375rem;
+	}
+
+	.footer-list a:hover {
+		text-decoration: underline;
+		color: var(--color-primary);
+	}
+
+	.footer-credit {
+		margin: 0;
+		font-size: 0.8125rem;
+		color: var(--color-secondary);
+		text-align: center;
+	}
+</style>
