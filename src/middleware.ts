@@ -1,7 +1,7 @@
 import { defineMiddleware } from 'astro:middleware';
 import type { SupabaseClient, User } from '@supabase/supabase-js';
 import { createSupabaseServerClient } from './lib/supabase/server';
-import { isSuperadminEmail } from './lib/superadmin';
+import { isSuperadminUser } from './lib/superadmin';
 
 export const onRequest = defineMiddleware(async (context, next) => {
 	const { pathname } = context.url;
@@ -33,7 +33,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		pathname.startsWith('/superadmin/') && pathname !== '/superadmin/login';
 
 	if (isSuperadminRoute) {
-		if (!user || !isSuperadminEmail(user.email)) {
+		const isSuperadmin = user ? await isSuperadminUser(supabase, user.id) : false;
+		if (!user || !isSuperadmin) {
 			const returnTo = encodeURIComponent(pathname);
 			return context.redirect(`/superadmin/login?returnTo=${returnTo}`);
 		}

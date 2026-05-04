@@ -16,11 +16,9 @@ const errorMessage =
 			? 'Email or password was not recognized.'
 			: error === 'forbidden'
 				? 'This account is not allowed to use superadmin.'
-				: error === 'config'
-					? 'Superadmin is not configured (set SUPERADMIN_EMAIL in your environment).'
-					: error
-						? 'Something went wrong. Try again.'
-						: null;
+				: error
+					? 'Something went wrong. Try again.'
+					: null;
 ---
 
 <SuperAdminLayout title="Superadmin — Sign in">

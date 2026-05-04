@@ -1,18 +1,18 @@
-export function getSuperadminEmail(): string | undefined {
-	const raw = import.meta.env.SUPERADMIN_EMAIL;
-	if (typeof raw !== 'string' || !raw.trim()) {
-		return undefined;
-	}
-	return raw.trim().toLowerCase();
-}
+import type { SupabaseClient } from '@supabase/supabase-js';
 
-export function isSuperadminEmail(email: string | undefined): boolean {
-	if (!email) {
+export async function isSuperadminUser(
+	supabase: SupabaseClient,
+	userId: string,
+): Promise<boolean> {
+	const { data, error } = await supabase
+		.from('user_profiles')
+		.select('id')
+		.eq('id', userId)
+		.eq('user_type', 'superadmin')
+		.maybeSingle();
+
+	if (error) {
 		return false;
 	}
-	const allowed = getSuperadminEmail();
-	if (!allowed) {
-		return false;
-	}
-	return email.trim().toLowerCase() === allowed;
+	return !!data;
 }

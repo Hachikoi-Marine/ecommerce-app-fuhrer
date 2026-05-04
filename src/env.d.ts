@@ -12,7 +12,6 @@ declare namespace App {
 type ImportMetaEnvAugmented = {
 	readonly SUPABASE_URL: string;
 	readonly SUPABASE_KEY: string;
-	readonly SUPERADMIN_EMAIL?: string;
 };
 
 interface ImportMetaEnv extends ImportMetaEnvAugmented {}

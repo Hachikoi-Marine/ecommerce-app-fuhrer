@@ -1,14 +1,10 @@
 import type { APIRoute } from 'astro';
 import { createSupabaseServerClient } from '../../../lib/supabase/server';
-import { getSuperadminEmail, isSuperadminEmail } from '../../../lib/superadmin';
+import { isSuperadminUser } from '../../../lib/superadmin';
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request, cookies, redirect }) => {
-	if (!getSuperadminEmail()) {
-		return redirect('/superadmin/login?error=config', 302);
-	}
-
 	const formData = await request.formData();
 	const email = String(formData.get('email') ?? '').trim();
 	const password = String(formData.get('password') ?? '');
@@ -24,7 +20,8 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
 		return redirect('/superadmin/login?error=invalid', 302);
 	}
 
-	if (!isSuperadminEmail(data.user.email)) {
+	const allowed = await isSuperadminUser(supabase, data.user.id);
+	if (!allowed) {
 		await supabase.auth.signOut();
 		return redirect('/superadmin/login?error=forbidden', 302);
 	}
