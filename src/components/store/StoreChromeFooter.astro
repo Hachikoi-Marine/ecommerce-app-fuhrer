@@ -1,219 +1,98 @@
 ---
 ---
 
-<section id="newsletter" class="section newsletter" aria-labelledby="newsletter-heading">
-	<h2 id="newsletter-heading" class="font-serif newsletter-title">
+<section
+	id="newsletter"
+	class="mx-auto max-w-2xl px-[clamp(1rem,4vw,3rem)] py-[clamp(3rem,8vw,5.5rem)] text-center"
+	aria-labelledby="newsletter-heading"
+>
+	<h2 id="newsletter-heading" class="mb-7 font-serif text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold leading-snug">
 		Get 15% off your next order, subscribe to our newsletter
 	</h2>
-	<div class="newsletter-form" role="group" aria-label="Newsletter signup">
-		<label class="visually-hidden" for="store-newsletter-email">Email</label>
+	<div class="flex flex-wrap items-stretch justify-center gap-3" role="group" aria-label="Newsletter signup">
+		<label class="sr-only" for="store-newsletter-email">Email</label>
 		<input
 			id="store-newsletter-email"
-			class="newsletter-input"
+			class="min-w-0 flex-[1_1_14rem] border border-muted bg-muted px-4 py-3.5 font-inherit text-primary placeholder:text-secondary"
 			type="email"
 			name="email"
 			placeholder="Enter your email here"
 			autocomplete="email"
 		/>
-		<button type="button" class="btn btn-solid">Subscribe</button>
+		<button
+			type="button"
+			class="inline-block cursor-pointer border border-primary bg-primary px-7 py-3.5 text-center font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.08em] text-background no-underline"
+		>
+			Subscribe
+		</button>
 	</div>
 </section>
 
-<footer class="site-footer">
-	<div class="footer-top">
-		<p class="footer-brand font-serif">Rad Plants</p>
-		<label class="currency-label">
-			<span class="visually-hidden">Currency</span>
-			<select class="currency-select" name="currency" aria-label="Currency">
+<footer class="mx-auto max-w-6xl border-t border-muted px-[clamp(1rem,4vw,3rem)] pb-8 pt-[clamp(2.5rem,6vw,4rem)]">
+	<div class="mb-10 flex flex-wrap items-center justify-between gap-4">
+		<p class="m-0 font-serif text-[1.35rem] font-bold">Rad Plants</p>
+		<label>
+			<span class="sr-only">Currency</span>
+			<select
+				class="border border-muted bg-background px-2 py-[0.4rem] pe-8 font-inherit text-primary"
+				name="currency"
+				aria-label="Currency"
+			>
 				<option value="eur" selected>EUR</option>
 				<option value="usd">USD</option>
 				<option value="gbp">GBP</option>
 			</select>
 		</label>
 	</div>
-	<div class="footer-columns">
+	<div class="mb-10 grid grid-cols-1 gap-8 min-[600px]:grid-cols-3">
 		<div>
-			<h3 class="footer-heading">Connect</h3>
-			<ul class="footer-list">
-				<li><a href="#">Instagram</a></li>
-				<li><a href="#">Facebook</a></li>
-				<li><a href="#">Pinterest</a></li>
-				<li><a href="#">YouTube</a></li>
+			<h3 class="mb-3 text-[0.8125rem] font-semibold uppercase tracking-[0.06em]">Connect</h3>
+			<ul class="m-0 list-none p-0">
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Instagram</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Facebook</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Pinterest</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">YouTube</a>
+				</li>
 			</ul>
 		</div>
 		<div>
-			<h3 class="footer-heading">Resources</h3>
-			<ul class="footer-list">
-				<li><a href="#">Return policy</a></li>
-				<li><a href="#">Track an order</a></li>
-				<li><a href="#">FAQs</a></li>
-				<li><a href="#">Privacy policy</a></li>
+			<h3 class="mb-3 text-[0.8125rem] font-semibold uppercase tracking-[0.06em]">Resources</h3>
+			<ul class="m-0 list-none p-0">
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Return policy</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Track an order</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">FAQs</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Privacy policy</a>
+				</li>
 			</ul>
 		</div>
 		<div>
-			<h3 class="footer-heading">About</h3>
-			<ul class="footer-list">
-				<li><a href="#">Our story</a></li>
-				<li><a href="#">Careers</a></li>
-				<li><a href="#">Press</a></li>
+			<h3 class="mb-3 text-[0.8125rem] font-semibold uppercase tracking-[0.06em]">About</h3>
+			<ul class="m-0 list-none p-0">
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Our story</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Careers</a>
+				</li>
+				<li class="mb-2">
+					<a class="text-[0.9375rem] text-secondary no-underline hover:text-primary hover:underline" href="#">Press</a>
+				</li>
 			</ul>
 		</div>
 	</div>
-	<p class="footer-credit">Designed by Slobodan Rad</p>
+	<p class="m-0 text-center text-[0.8125rem] text-secondary">Designed by Slobodan Rad</p>
 </footer>
-
-<style>
-	.font-serif {
-		font-family: var(--font-serif);
-	}
-
-	.visually-hidden {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
-	}
-
-	.section {
-		padding: clamp(3rem, 8vw, 5.5rem) clamp(1rem, 4vw, 3rem);
-	}
-
-	.newsletter {
-		text-align: center;
-		max-width: 40rem;
-		margin: 0 auto;
-	}
-
-	.newsletter-title {
-		font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-		font-weight: 600;
-		line-height: 1.35;
-		margin: 0 0 1.75rem;
-	}
-
-	.newsletter-form {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75rem;
-		justify-content: center;
-		align-items: stretch;
-	}
-
-	.newsletter-input {
-		flex: 1 1 14rem;
-		min-width: 0;
-		padding: 0.875rem 1rem;
-		font: inherit;
-		border: 1px solid var(--color-muted);
-		background: var(--color-muted);
-		color: var(--color-primary);
-	}
-
-	.newsletter-input::placeholder {
-		color: var(--color-secondary);
-	}
-
-	.btn {
-		display: inline-block;
-		padding: 0.875rem 1.75rem;
-		font-family: var(--font-sans);
-		font-size: 0.8125rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		text-decoration: none;
-		text-align: center;
-		border: 1px solid transparent;
-		cursor: pointer;
-	}
-
-	.btn-solid {
-		background: var(--color-primary);
-		color: var(--color-background);
-		border-color: var(--color-primary);
-	}
-
-	.site-footer {
-		padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 3rem) 2rem;
-		border-top: 1px solid var(--color-muted);
-		max-width: 72rem;
-		margin: 0 auto;
-	}
-
-	.footer-top {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 2.5rem;
-	}
-
-	.footer-brand {
-		margin: 0;
-		font-size: 1.35rem;
-		font-weight: 700;
-	}
-
-	.currency-select {
-		font: inherit;
-		padding: 0.4rem 2rem 0.4rem 0.5rem;
-		border: 1px solid var(--color-muted);
-		background: var(--color-background);
-		color: var(--color-primary);
-	}
-
-	.footer-columns {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
-		margin-bottom: 2.5rem;
-	}
-
-	@media (max-width: 600px) {
-		.footer-columns {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	.footer-heading {
-		margin: 0 0 0.75rem;
-		font-size: 0.8125rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-	}
-
-	.footer-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.footer-list li {
-		margin-bottom: 0.5rem;
-	}
-
-	.footer-list a {
-		text-decoration: none;
-		color: var(--color-secondary);
-		font-size: 0.9375rem;
-	}
-
-	.footer-list a:hover {
-		text-decoration: underline;
-		color: var(--color-primary);
-	}
-
-	.footer-credit {
-		margin: 0;
-		font-size: 0.8125rem;
-		color: var(--color-secondary);
-		text-align: center;
-	}
-</style>

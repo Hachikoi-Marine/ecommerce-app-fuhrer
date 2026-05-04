@@ -5,31 +5,8 @@ import SuperAdminLayout from '../../../layouts/SuperAdminLayout.astro';
 ---
 
 <SuperAdminLayout title="Superadmin profile">
-	<main class="profile-main">
-		<h1 class="font-serif page-title">Superadmin profile</h1>
-		<p class="lede">You are signed in as the configured superadmin user.</p>
+	<main class="mx-auto max-w-xl px-[clamp(1rem,4vw,2rem)] py-[clamp(2rem,6vw,4rem)]">
+		<h1 class="mb-4 font-serif text-[clamp(1.75rem,3vw,2.25rem)]">Superadmin profile</h1>
+		<p class="m-0 leading-relaxed text-secondary">You are signed in as the configured superadmin user.</p>
 	</main>
 </SuperAdminLayout>
-
-<style>
-	.profile-main {
-		max-width: 36rem;
-		margin: 0 auto;
-		padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
-	}
-
-	.font-serif {
-		font-family: var(--font-serif);
-	}
-
-	.page-title {
-		font-size: clamp(1.75rem, 3vw, 2.25rem);
-		margin: 0 0 1rem;
-	}
-
-	.lede {
-		margin: 0;
-		color: var(--color-secondary);
-		line-height: 1.6;
-	}
-</style>

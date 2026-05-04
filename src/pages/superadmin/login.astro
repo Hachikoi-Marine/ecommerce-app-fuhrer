@@ -24,92 +24,38 @@ const errorMessage =
 ---
 
 <SuperAdminLayout title="Superadmin — Sign in">
-	<main class="auth-main">
-		<h1 class="font-serif page-title">Superadmin sign in</h1>
-		<p class="lede">Restricted access. After sign in you will go to your superadmin profile.</p>
-		{errorMessage && <p class="error" role="alert">{errorMessage}</p>}
-		<form class="auth-form" method="post" action="/api/auth/superadmin-login">
+	<main class="mx-auto max-w-[22rem] px-4 py-[clamp(2rem,6vw,4rem)]">
+		<h1 class="mb-3 font-serif text-[1.75rem]">Superadmin sign in</h1>
+		<p class="mb-6 text-[0.9375rem] text-secondary">Restricted access. After sign in you will go to your superadmin profile.</p>
+		{errorMessage && <p class="mb-4 text-[0.9375rem] text-primary" role="alert">{errorMessage}</p>}
+		<form class="flex flex-col gap-5" method="post" action="/api/auth/superadmin-login">
 			<input type="hidden" name="returnTo" value={returnTo} />
-			<label class="field">
-				<span class="label">Email</span>
-				<input class="input" type="email" name="email" required autocomplete="username" />
+			<label class="flex flex-col gap-1.5">
+				<span class="text-sm font-medium">Email</span>
+				<input
+					class="border border-muted bg-background px-3 py-2.5 font-inherit text-primary"
+					type="email"
+					name="email"
+					required
+					autocomplete="username"
+				/>
 			</label>
-			<label class="field">
-				<span class="label">Password</span>
-				<input class="input" type="password" name="password" required autocomplete="current-password" />
+			<label class="flex flex-col gap-1.5">
+				<span class="text-sm font-medium">Password</span>
+				<input
+					class="border border-muted bg-background px-3 py-2.5 font-inherit text-primary"
+					type="password"
+					name="password"
+					required
+					autocomplete="current-password"
+				/>
 			</label>
-			<button type="submit" class="btn btn-solid">Sign in</button>
+			<button
+				type="submit"
+				class="cursor-pointer border border-primary bg-primary px-5 py-3.5 font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.06em] text-background"
+			>
+				Sign in
+			</button>
 		</form>
 	</main>
 </SuperAdminLayout>
-
-<style>
-	.auth-main {
-		max-width: 22rem;
-		margin: 0 auto;
-		padding: clamp(2rem, 6vw, 4rem) 1rem;
-	}
-
-	.font-serif {
-		font-family: var(--font-serif);
-	}
-
-	.page-title {
-		font-size: 1.75rem;
-		margin: 0 0 0.75rem;
-	}
-
-	.lede {
-		margin: 0 0 1.5rem;
-		color: var(--color-secondary);
-		font-size: 0.9375rem;
-	}
-
-	.error {
-		margin: 0 0 1rem;
-		font-size: 0.9375rem;
-		color: var(--color-primary);
-	}
-
-	.auth-form {
-		display: flex;
-		flex-direction: column;
-		gap: 1.25rem;
-	}
-
-	.field {
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
-	}
-
-	.label {
-		font-size: 0.875rem;
-		font-weight: 500;
-	}
-
-	.input {
-		font: inherit;
-		padding: 0.65rem 0.75rem;
-		border: 1px solid var(--color-muted);
-		background: var(--color-background);
-		color: var(--color-primary);
-	}
-
-	.btn {
-		display: inline-block;
-		padding: 0.875rem 1.25rem;
-		font-family: var(--font-sans);
-		font-size: 0.8125rem;
-		font-weight: 600;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		border: 1px solid var(--color-primary);
-		cursor: pointer;
-	}
-
-	.btn-solid {
-		background: var(--color-primary);
-		color: var(--color-background);
-	}
-</style>

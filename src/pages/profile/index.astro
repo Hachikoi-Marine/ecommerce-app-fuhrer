@@ -5,41 +5,13 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 ---
 
 <SiteLayout title="Your profile — Rad Plants">
-	<main class="profile-main">
-		<h1 class="font-serif page-title">Your profile</h1>
-		<p class="lede">
-			This page is only visible when you are signed in. Use Log out in the header to clear your
-			session.
+	<main class="mx-auto max-w-xl px-[clamp(1rem,4vw,2rem)] py-[clamp(2rem,6vw,4rem)]">
+		<h1 class="mb-4 font-serif text-[clamp(1.75rem,3vw,2.25rem)]">Your profile</h1>
+		<p class="mb-6 leading-relaxed text-secondary">
+			This page is only visible when you are signed in. Use Log out in the header to clear your session.
 		</p>
 		<p>
-			<a href="/">Continue shopping</a>
+			<a class="text-primary" href="/">Continue shopping</a>
 		</p>
 	</main>
 </SiteLayout>
-
-<style>
-	.profile-main {
-		max-width: 36rem;
-		margin: 0 auto;
-		padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
-	}
-
-	.font-serif {
-		font-family: var(--font-serif);
-	}
-
-	.page-title {
-		font-size: clamp(1.75rem, 3vw, 2.25rem);
-		margin: 0 0 1rem;
-	}
-
-	.lede {
-		margin: 0 0 1.5rem;
-		color: var(--color-secondary);
-		line-height: 1.6;
-	}
-
-	.profile-main a {
-		color: var(--color-primary);
-	}
-</style>
