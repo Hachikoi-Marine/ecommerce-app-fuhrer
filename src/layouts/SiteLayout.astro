@@ -5,7 +5,7 @@ type Props = {
 	variant?: 'default' | 'store';
 };
 
-const { title = 'Rad Plants', variant = 'default' } = Astro.props;
+const { title = 'Rad Atelier', variant = 'default' } = Astro.props;
 const loggedIn = !!Astro.locals.user;
 ---
 
@@ -46,7 +46,7 @@ const loggedIn = !!Astro.locals.user;
 									opacity="0.35"
 								/>
 							</svg>
-							<span class="text-[1.2rem] font-bold">Rad Plants</span>
+							<span class="text-[1.2rem] font-bold">Rad Atelier</span>
 						</a>
 						<nav
 							class="order-3 flex flex-wrap items-center justify-center gap-x-[clamp(1rem,3vw,2.5rem)] gap-y-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary md:order-none"
@@ -126,7 +126,7 @@ const loggedIn = !!Astro.locals.user;
 			) : (
 				<header class="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-4 border-b border-muted bg-background px-[clamp(1rem,4vw,3rem)] py-5">
 					<a href="/" class="font-serif text-xl font-bold no-underline">
-						Rad Plants
+						Rad Atelier
 					</a>
 					<nav class="flex flex-wrap items-center gap-5 text-[0.9375rem]" aria-label="Main">
 						<a href="/#categories" class="no-underline hover:underline">
