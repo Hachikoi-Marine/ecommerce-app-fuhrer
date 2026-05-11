@@ -17,10 +17,11 @@ CREATE TABLE public.categories (
   description text,
   slug text NOT NULL,
   is_active boolean NOT NULL DEFAULT true,
+  cover_image text,
 
   created_at timestamptz NOT NULL DEFAULT now(),
   updated_at timestamptz NOT NULL DEFAULT now()
-  
+
 );
 
 COMMENT ON TABLE public.categories IS 'Product taxonomy (browse/filter).';

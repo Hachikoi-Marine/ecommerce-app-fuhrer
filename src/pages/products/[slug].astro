@@ -1,14 +1,16 @@
 ---
+export const prerender = false;
+
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import StoreChromeFooter from '../../components/store/StoreChromeFooter.astro';
-import { formatPrice, getProductBySlug, productSlugs } from '../../lib/catalog';
-
-export function getStaticPaths() {
-	return productSlugs.map((slug) => ({ params: { slug } }));
-}
+import { formatPrice, getProductBySlug } from '../../lib/catalog';
+import { getDbProductAsCatalog } from '../../lib/product-from-db';
 
 const slug = Astro.params.slug;
-const product = slug ? getProductBySlug(slug) : undefined;
+let product = slug ? getProductBySlug(slug) : undefined;
+if (!product && Astro.locals.supabase && slug) {
+	product = await getDbProductAsCatalog(Astro.locals.supabase, slug);
+}
 if (!product) {
 	return Astro.redirect('/');
 }
