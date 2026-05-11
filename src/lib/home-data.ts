@@ -80,11 +80,23 @@ export function mapDbProductToFeaturedCard(p: ProductCardQueryRow): HomeFeatured
 }
 
 export async function fetchHomePageData(supabase: SupabaseClient): Promise<HomePagePayload> {
-	const { data: rawCategories, error: catErr } = await supabase
-		.from('categories')
-		.select('slug, title, description, cover_image')
-		.eq('is_active', true)
-		.order('title', { ascending: true });
+	const productSelect =
+		'slug, title, price, is_available, is_featured, tags, categories ( cover_image )';
+
+	const [{ data: rawCategories, error: catErr }, featuredFirst] = await Promise.all([
+		supabase
+			.from('categories')
+			.select('slug, title, description, cover_image')
+			.eq('is_active', true)
+			.order('title', { ascending: true }),
+		supabase
+			.from('products')
+			.select(productSelect)
+			.eq('is_active', true)
+			.eq('is_featured', true)
+			.order('created_at', { ascending: false })
+			.limit(8),
+	]);
 
 	const categories: HomeCategoryCard[] =
 		!catErr && rawCategories
@@ -101,16 +113,7 @@ export async function fetchHomePageData(supabase: SupabaseClient): Promise<HomeP
 				})
 			: [];
 
-	const productSelect =
-		'slug, title, price, is_available, is_featured, tags, categories ( cover_image )';
-
-	let { data: featuredRows, error: featErr } = await supabase
-		.from('products')
-		.select(productSelect)
-		.eq('is_active', true)
-		.eq('is_featured', true)
-		.order('created_at', { ascending: false })
-		.limit(8);
+	let { data: featuredRows, error: featErr } = featuredFirst;
 
 	if (featErr || !featuredRows?.length) {
 		const { data: fallback } = await supabase
