@@ -1,0 +1,40 @@
+---
+export const prerender = false;
+
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProductCardGrid from '../../components/store/ProductCardGrid.astro';
+import { fetchCategoryPageData } from '../../lib/category-page-data';
+
+const slug = Astro.params.slug ?? '';
+const supabase = Astro.locals.supabase;
+
+if (!supabase) {
+	return Astro.redirect('/');
+}
+
+const page = await fetchCategoryPageData(supabase, slug);
+if (!page) {
+	return Astro.redirect('/');
+}
+
+const title = `${page.title} — Rad Plants`;
+---
+
+<SiteLayout {title}>
+	<main class="mx-auto max-w-6xl px-[clamp(1rem,4vw,3rem)] pb-[clamp(3rem,8vw,5rem)] pt-[clamp(1.5rem,4vw,3rem)]">
+		<nav class="mb-6 text-[0.8125rem] text-secondary" aria-label="Breadcrumb">
+			<a href="/" class="text-inherit no-underline hover:underline">Home</a>
+			<span aria-hidden="true"> / </span>
+			<a href="/#categories" class="text-inherit no-underline hover:underline">Categories</a>
+			<span aria-hidden="true"> / </span>
+			<span class="text-primary">{page.title}</span>
+		</nav>
+		<h1 class="mb-3 font-serif text-[clamp(1.75rem,4vw,2.5rem)] font-semibold">{page.title}</h1>
+		{page.description ? <p class="mb-10 max-w-2xl text-secondary">{page.description}</p> : <div class="mb-10" />}
+		<ProductCardGrid
+			products={page.products}
+			emptyMessage="No products in this category yet."
+			gridClass="grid grid-cols-2 gap-[clamp(1rem,3vw,2rem)] md:grid-cols-3"
+		/>
+	</main>
+</SiteLayout>
