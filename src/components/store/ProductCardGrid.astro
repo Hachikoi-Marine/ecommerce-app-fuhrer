@@ -1,0 +1,50 @@
+---
+import type { HomeFeaturedCard } from '../../lib/home-data';
+
+type Props = {
+	products: HomeFeaturedCard[];
+	emptyMessage?: string;
+	gridClass?: string;
+};
+
+const {
+	products,
+	emptyMessage = 'No products to show yet.',
+	gridClass = 'grid grid-cols-2 gap-[clamp(1rem,3vw,2rem)]',
+} = Astro.props;
+---
+
+{
+	products.length === 0 ? (
+		<p class="text-secondary">{emptyMessage}</p>
+	) : (
+		<div class={gridClass}>
+			{products.map((p) => (
+				<a class="block text-inherit no-underline" href={p.href}>
+					<div class="relative mb-3 aspect-[4/5] overflow-hidden">
+						{p.soldOut && (
+							<span class="absolute left-3 top-3 z-[1] bg-primary px-2 py-[0.35rem] text-[0.6875rem] font-semibold uppercase tracking-[0.04em] text-background">
+								Sold out
+							</span>
+						)}
+						{p.limitBadge && !p.soldOut && (
+							<span class="absolute right-3 top-3 z-[1] bg-primary px-2 py-[0.35rem] text-[0.6875rem] font-semibold uppercase tracking-[0.04em] text-background">
+								Limited
+							</span>
+						)}
+						<img
+							class="size-full object-cover object-center"
+							src={p.imageUrl}
+							alt={p.imageAlt}
+							width="900"
+							height="1100"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="mb-1 font-serif text-lg font-semibold">{p.title}</h3>
+					<p class="m-0 text-[0.9375rem]">{p.priceLabel}</p>
+				</a>
+			))}
+		</div>
+	)
+}

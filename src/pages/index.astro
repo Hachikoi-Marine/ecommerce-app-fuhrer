@@ -3,8 +3,19 @@ export const prerender = false;
 
 import SiteLayout from '../layouts/SiteLayout.astro';
 import HomePage from '../components/home/HomePage.astro';
+import { fetchHomePageData, HOME_HERO_IMAGE_URL } from '../lib/home-data';
+
+const supabase = Astro.locals.supabase;
+const homePayload = supabase
+	? await fetchHomePageData(supabase)
+	: { categories: [], featuredProducts: [] };
 ---
 
-<SiteLayout title="Rad Atelier — Fine jewelry for every day">
-	<HomePage />
+<SiteLayout title="Rad Plants — Plants for your home">
+	<HomePage
+		heroImageUrl={HOME_HERO_IMAGE_URL.trim()}
+		heroImageAlt="Handcrafted jewelry product photography"
+		categories={homePayload.categories}
+		featuredProducts={homePayload.featuredProducts}
+	/>
 </SiteLayout>
