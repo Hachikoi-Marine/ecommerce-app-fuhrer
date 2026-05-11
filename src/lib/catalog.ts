@@ -16,41 +16,40 @@ const p1 = exampleImages.product1;
 const p2 = exampleImages.product2;
 const p3a = exampleImages.product3a;
 const p3b = exampleImages.product3b;
-const p3c = exampleImages.product3c;
 
 export const catalogProducts: CatalogProduct[] = [
 	{
-		slug: 'plant-1',
-		title: 'Plant 1',
+		slug: 'serpent-necklace',
+		title: 'Serpent necklace',
 		priceCents: 19000,
 		currencySuffix: '€',
 		soldOut: false,
 		stock: 12,
 		imageMain: p1,
 		thumbnails: [p1, p2, exampleImages.extraA],
-		imageAlt: 'Large leafy plant in a textured pot',
+		imageAlt: 'Gold serpent necklace on a dark display surface',
 	},
 	{
-		slug: 'plant-2',
-		title: 'Plant 2',
+		slug: 'stacked-rings',
+		title: 'Stacked signet rings',
 		priceCents: 5000,
 		currencySuffix: '€',
 		soldOut: false,
 		stock: 3,
 		imageMain: p2,
 		thumbnails: [p2, p1, exampleImages.extraB],
-		imageAlt: 'Two small plants in terracotta pots',
+		imageAlt: 'Two stacked signet rings on a neutral backdrop',
 	},
 	{
-		slug: 'plant-3',
-		title: 'Plant 3',
+		slug: 'heritage-cuff',
+		title: 'Heritage cuff',
 		priceCents: 5000,
 		currencySuffix: '€',
 		soldOut: true,
 		stock: 0,
 		imageMain: p3a,
 		thumbnails: [p3a, p3b, exampleImages.extraC],
-		imageAlt: 'Plant in a wooden pot',
+		imageAlt: 'Wide metal cuff bracelet with a brushed finish',
 	},
 ];
 
